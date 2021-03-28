@@ -1,0 +1,98 @@
+*{
+                margin: 0;
+                padding: 0;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            }
+
+            body{
+                height: 100vh;
+                width: 100vw;
+                background: black;
+            }
+
+            #displayArea{
+                width: 82vw;
+                height: 100vh;
+                text-align: center;
+            }
+
+            form{
+                position: fixed;
+                width: 100%;
+                bottom:0;
+                height: 8vh;
+                border: none;
+                background: #101010;
+                box-shadow: 0px -3px 3px #101010;
+            }
+            form input{
+                border-radius: 10px;
+                border: none;
+                background:none;
+                background: #050505;
+                color: white;
+                height: 6vh;
+                width: 50vw;
+                padding: 5px;
+            }
+            form button{
+                border-radius: 10px;
+                border: none;
+                background:none;
+                background: #090909;
+                color: white;
+                width: 10vw;
+                height: 6vh;
+                margin-top: 1vh;
+            }
+            #textArea{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100vw;
+                padding-bottom: 10vh;
+            }
+            ul{
+                list-style: none;
+            }
+            li{
+                margin: 2px;
+                padding: 5px;
+                border-radius: 10px;
+                background: #009acd;
+                max-width: 40vw;
+                min-width: 40vw;
+                min-height: 3vh;
+                word-break: break-all;
+                text-align: left;
+                box-shadow: 0px 0px 3px black;
+                margin-right: 10vw; 
+            }
+
+            #messages > li:nth-child(odd){
+                background: #00688B;
+                margin-left: 5vw;
+                text-align: right;
+                box-shadow: 0px 0px 3px black;
+            }
+
+
+            #right{
+                top: 0;
+                right: 0;
+                background: #202020;
+                position: fixed;
+                height: 100%;
+                width: 18vw;
+                text-align: center;
+            }
+            #right h2{
+                width: 95%;
+                color: white;
+                text-align: center;
+                font-size: 12px;
+            }
+            #right h3{
+                color: white;
+                font-size: 12px;
+            }
