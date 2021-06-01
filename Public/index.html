@@ -39,16 +39,20 @@
                 color: white;
                 display: grid;
                 grid-template-rows: 1fr 5fr 1fr;
+                transition: 1s;
             }
             #userInfo{
                 border-bottom: 1px solid white;
+                height: 100%;
             }
             #userInfo input{
-                width: 95%;
-                margin: 5%;
+                width: 100%;
+                height: 30%;
+                padding: 1%;
                 background: none;
                 border: none;
-                color:#1E90FF;
+                border: 1px solid red;
+                color:white;
                 font-size: 15px;
             }
 
@@ -82,6 +86,9 @@
                 background: #101010;
                 color: #1e90ff;
                 text-align:center;
+            }
+            #chatarea h1 button{
+                display: none;
             }
             /*Area com a lista de mensagens*/
             #messages{
@@ -130,6 +137,48 @@
                 border-bottom-right-radius: 10px;
                 padding: 10px;
             }
+
+            @media (max-width:600px){
+
+                #leftTab{
+                    width: 60%;
+                    display: none;
+                    position: absolute;
+                    transition: 1s;
+                }
+                #leftTab button{
+                    visibility: visible;
+                    position: absolute;
+                    bottom: 0px;
+                    width: 100%;
+                    height: 5%;
+                    background: none;
+                    border: 1px solid red;
+                    color: red;
+                }
+
+                #chatArea h1{
+                    font-size: 20px;
+                    height: 8%;
+                    padding-top: 12px;
+                }
+                #chatArea h1 button{
+                    display: block;
+                    position: absolute;
+                    border: none;
+                    background: #1E90FF;
+                    color: white;
+                    width: 15%;
+                    height: 5%;
+                }
+
+                #form input{
+                    width: 70%;
+                }
+                #form  button{
+                    width: 20%;
+                }
+            }
             
         </style>
 
@@ -152,13 +201,13 @@
                 </div>
 
                 <div id="hideBtn">
-                    <button id="hideButton">Esconder</button>
+                    <button id="hideButton" onclick="hideTab()">Esconder</button>
                 </div>
             </div>
 
 
             <div id="chatArea">
-                <h1>Random Room - Hack It</h1>
+                <h1><button id="showButton" onclick="showTab()">»</button> Room - Hack It</h1>
                 <ul id="messages"></ul>
 
                 <form id="form">
@@ -205,6 +254,15 @@
                 let chatHeight = document.getElementById('messages').scrollHeight
                 document.getElementById('messages').scrollTo(0, chatHeight)
             })
+
+            function showTab(){
+                document.getElementById('leftTab').style.display = "grid"
+                document.getElementById('showButton').style.visibility = "hidden"
+            }
+            function hideTab(){
+                document.getElementById('leftTab').style.display = "none"
+                document.getElementById('showButton').style.visibility = "visible"
+            }
 
         </script>
 
