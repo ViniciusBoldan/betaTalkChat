@@ -4,7 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>TalkChat V2</title>
-    
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+
         <link rel="stylesheet" href="mainStyle.css">
 
     </head>
@@ -15,6 +18,7 @@
 
             <div id="leftTab">
                 <div id="userInfo">
+                    <input id="authorAvatar" type="text" placeholder="Img link" autocomplete="off">
                     <input id="author" type="text" placeholder="Type your nickname" autocomplete="off">
                 </div>
 
@@ -34,10 +38,13 @@
             <div id="chatArea">
                 <h1><button id="showButton" onclick="showTab()">»</button> Room - Hack It</h1>
                 <ul id="messages"></ul>
-
+                
                 <form id="form">
-                    <input placeholder='type here...' id="chatInput" autocomplete="off" />
-                    <button>Send</button>
+                    <output id="typing"></output>
+                    <div>
+                        <input placeholder='type here...' id="chatInput" autocomplete="off" />
+                        <button>Send</button>
+                    </div>
                 </form>
             </div>
 

@@ -22,10 +22,20 @@ io.on('connection', (socket) => {
 
 
 //evento da mensagem
+let messageArr = []
 
 io.on('connection', (socket) => {
+
+    io.to(socket.id).emit('previousMessages', messageArr )
+
+    socket.on('whoIsTyping', (theOne) => {
+        io.emit('typing', theOne)
+    })
+
     socket.on('messageEvent', (msg) => {
         msg.userID = socket.id
+        messageArr.push(msg)
+
         io.emit('messageEvent', msg)
     })
 })
